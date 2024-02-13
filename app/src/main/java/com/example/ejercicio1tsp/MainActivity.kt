@@ -50,7 +50,7 @@ fun CourseCertificate(name: String, modifier: Modifier = Modifier) {
         verticalArrangement = Arrangement.Center
     ){
         Box(
-        ){
+        ) {
             Image(
                 painter =
                 painterResource(id = R.drawable.escudounam_azul),
@@ -67,9 +67,8 @@ fun CourseCertificate(name: String, modifier: Modifier = Modifier) {
             Image(
                 painter =
                 painterResource(id = R.drawable.escudofi_azul),
-                contentDescription = null)
-                modifier = modifier
-                horizontalArrangement = Arrangement.Horizontal
+                contentDescription = null
+            )
         }
         Text(
             text = "This certificate is presented to: ",
