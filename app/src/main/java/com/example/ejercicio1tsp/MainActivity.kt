@@ -7,9 +7,12 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.requiredSize
+import androidx.compose.foundation.layout.size
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
@@ -45,34 +48,48 @@ class MainActivity : ComponentActivity() {
 fun CourseCertificate(name: String, modifier: Modifier = Modifier) {
     Column(
         modifier = modifier
-            .fillMaxSize()
-            .padding(20.dp),
-        verticalArrangement = Arrangement.Center
+            //.fillMaxSize()
+            .padding(20.dp)
     ){
         Box(
+            modifier = modifier.padding(10.dp,0.dp)
         ) {
-            Image(
-                painter =
-                painterResource(id = R.drawable.escudounam_azul),
-                contentDescription = null
 
-            )
-            Text(
-                text = "Universidad Nacional Autónoma de México",
-                fontSize = 50.sp,
-                fontWeight = FontWeight.Bold,
-                textAlign = TextAlign.Center,
-                modifier = modifier
-            )
-            Image(
-                painter =
-                painterResource(id = R.drawable.escudofi_azul),
-                contentDescription = null
-            )
+
+            Row(
+                //contentAlignment = Alignment.Center
+                //verticalAlignment = Alignment.CenterVertically
+
+            ) {
+                Image(
+                    painter =
+                    painterResource(id = R.drawable.escudounam_azul),
+                    contentDescription = null,
+                    modifier = modifier
+                        .requiredSize(85.dp)
+                )
+                Text(
+                    text = "UNAM",
+                    fontSize = 50.sp,
+                    fontWeight = FontWeight.Bold,
+                    textAlign = TextAlign.Center,
+                    modifier = modifier
+                        .align(Alignment.CenterVertically)
+                        .padding(15.dp, 0.dp)
+                )
+                Image(
+                    painter =
+                    painterResource(id = R.drawable.escudofi_azul),
+                    contentDescription = null,
+                    modifier = modifier
+                        .requiredSize(85.dp)
+
+                )
+            }
         }
-        Text(
-            text = "This certificate is presented to: ",
-        )
+            Text(
+                text = "This certificate is presented to: ",
+            )
 
     }
 }
